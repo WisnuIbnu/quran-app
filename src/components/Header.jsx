@@ -29,6 +29,9 @@ const Header = () => {
       {/* Menu desktop tetap menggunakan <a> untuk anchor links */}
       <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 p-4 ${isScroll ? "" : 'bg-white dark:bg-gray-800 shadow-xl'}`}>
         <li><a className='text-white' href="/">Home</a></li>
+        <li><a className='text-white' href="/">Al-Quran</a></li>
+        <li><a className='text-white' href="/">Al-Ma'tsurat</a></li>
+        <li><a className='text-white' href="/">Doa-doa</a></li>
       </ul>
 
       <div className='flex items-center gap-4'>
