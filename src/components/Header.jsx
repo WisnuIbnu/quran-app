@@ -55,7 +55,9 @@ const Header = () => {
         
         {/* Link menu mobile, onClick ditambahkan untuk menutup menu setelah diklik */}
         <li><a className='text-white' onClick={closeMenu} href="/">Home</a></li>
-       
+        <li><a className='text-white' onClick={closeMenu} href="/">Al-Quran</a></li>
+        <li><a className='text-white' onClick={closeMenu} href="/">Al-Ma'tsurat</a></li>
+        <li><a className='text-white' onClick={closeMenu} href="/">Doa-doa</a></li>       
       </ul>
     </nav>
   );
