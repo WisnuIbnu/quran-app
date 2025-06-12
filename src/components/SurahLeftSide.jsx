@@ -48,13 +48,13 @@ const SurahLeftSide = ({
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{surah.nomor || '...'}</div>
-              <div className="text-sm text-gray-500 dark:text-gray-400">{surah.jumlahAyat || '...'} verses</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">{surah.jumlahAyat || '...'} Ayat</div>
             </div>
           </div>
 
           <div className="bg-blue-50 dark:bg-gray-700 rounded-xl p-4 mb-4">
             <p className="text-sm text-gray-700 dark:text-gray-300 text-justify">
-              {surah.deskripsi ? surah.deskripsi.replace(/<[^>]+>/g, '').substring(0, 300) + '...' : 'Loading description...'}
+              {surah.deskripsi ? surah.deskripsi.replace(/<[^>]+>/g, '').substring(0, 200) + '...' : 'Loading description...'}
             </p>
           </div>
 
@@ -81,7 +81,7 @@ const SurahLeftSide = ({
 
         {/* Reciter Selection */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-          <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Reciter Selection</h2>
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Qori</h2>
           <Menu as="div" className="relative inline-block w-full">
             <div>
               <Menu.Button 
@@ -116,7 +116,7 @@ const SurahLeftSide = ({
 
           {/* Volume Control */}
           <div className="mt-4">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">Volume Control</h2>
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">Volume</h2>
             <div className="flex items-center gap-2">
               <button 
                 onClick={toggleMute}

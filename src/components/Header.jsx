@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // PENTING: Untuk navigasi halaman
 import ThemeToggle from './ThemeToggle';
 import logo from '../assets/logo_dark.png'; 
-import menu from '../assets/menu-white.png'; // Ganti dengan path yang sesuai
+import menu from '../assets/menu-white.png';
+import icon from '../assets/arrow-icon-dark.png'; // Ganti dengan path yang sesuai
 
 const Header = () => {
   const [isScroll, setIsScroll] = useState(false);
@@ -36,8 +37,8 @@ const Header = () => {
 
       <div className='flex items-center gap-4'>
         <ThemeToggle />
-        <a href="#contact" className='hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4'>
-          Contact <img src={logo} className='w-3 text-white' alt='Contact' />
+        <a href="#contact" className='hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 text-white'>
+          Contact <img src={icon} className='w-3 text-white ' alt='Contact' />
         </a>
         <button className='block md:hidden ml-3' onClick={openMenu} aria-label="Open menu">
           <img src={menu} alt='Menu' className='w-6'/>
