@@ -3,10 +3,11 @@ import { useParams, Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import { useTheme } from '../hooks/useTheme';
 import AudioPlayer from '../components/AudioPlayer';
-import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 import SurahLeftSide from '../components/SurahLeftSide';
 import SurahRightSide from '../components/SurahRightSide';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
+import Footer from '../components/Footer';
 
 const SurahDetail = () => {
   const { id } = useParams();
@@ -76,7 +77,7 @@ const SurahDetail = () => {
   if (surahLoading) {
     return (
       <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-color)' }}>
-        <Header />
+        <Navbar />
         <div className="max-w-md mx-auto px-4 py-8">
           <div className="flex justify-center items-center h-64">
             <div className={`animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 ${
@@ -93,7 +94,7 @@ const SurahDetail = () => {
   if (error) {
     return (
       <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-color)' }}>
-        <Header />
+        <Navbar />
         <div className="max-w-md mx-auto px-4 py-8 text-center">
           <div className="p-4 rounded-lg" style={{ 
             backgroundColor: 'var(--card-bg)',
@@ -121,7 +122,7 @@ const SurahDetail = () => {
 
   return (
     <>
-      <Header />
+      <Navbar />
       <div className="min-h-screen pt-20" style={{ backgroundColor: 'var(--bg-color)' }}>   
         <AudioPlayer 
           src={currentAudio?.src} 
@@ -176,6 +177,7 @@ const SurahDetail = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
