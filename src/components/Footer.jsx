@@ -27,6 +27,7 @@ const Footer = () => {
           <div className="flex space-x-6">
             <motion.a 
               href="https://github.com/WisnuIbnu"
+              target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -3 }}
               className={`transition-colors ${
                 theme === 'dark' 
@@ -40,6 +41,7 @@ const Footer = () => {
             </motion.a>
             <motion.a 
               href="https://github.com/WisnuIbnu"
+              target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -3 }}
               className={`transition-colors ${
                 theme === 'dark' 
@@ -53,6 +55,7 @@ const Footer = () => {
             </motion.a>
             <motion.a 
               href="https://github.com/WisnuIbnu"
+              target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -3 }}
               className={`transition-colors ${
                 theme === 'dark' 
@@ -77,7 +80,9 @@ const Footer = () => {
             theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
           } text-sm`}
         >
-          <p>© {new Date().getFullYear()} WisnuIbnu. All Rights Reserved. Powered By <a href="https://equran.id/surat/1" className={`font-bold ${
+          <p>© {new Date().getFullYear()} WisnuIbnu. All Rights Reserved. Powered By <a href="https://equran.id/surat/1"
+          target="_blank" rel="noopener noreferrer"
+          className={`font-bold ${
             theme === 'dark' ? 'text-white' : 'text-gray-900'
           }`}>EQuran.id</a></p>
           <p className="mt-2">Made with ❤️ by developers</p>
