@@ -22,4 +22,60 @@ html {
   @apply text-gray-300;
 }
 
+:root {
+  /* Light Mode Default */
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #f9f9f9;
+  --nav-bg: #f0f0f0;
+}
+
+.dark {
+  /* Dark Mode Overrides */
+  --bg-color: #1a1a2e;     /* Biru dongker */
+  --text-color: #E4E6EB;   /* Warna teks terang */
+  --card-bg: #1F2A44;      /* Background kartu */
+  --nav-bg: #162139;       /* Background navbar */
+}
+
+/* ===================== */
+/* Utility classes & hover */
+/* ===================== */
+
+.lightHover {
+  color: #fcf4ff;
+}
+
+.darkHover {
+  color: #2a004a;
+}
+
+.darkTheme {
+  color: #11001f;
+}
+
+.lightHover-background:hover {
+  background-color: #fcf4ff;
+}
+
+.darkHover-background:hover {
+  background-color: #2a004a;
+}
+
+.darkTheme-background:hover {
+  background-color: #11001f;
+}
+
+/* ==================== */
+/* Box shadow on hover */
+/* ==================== */
+
+.box-shadow-black:hover {
+  box-shadow: 4px 4px #000000;
+}
+
+.box-shadow-white:hover {
+  box-shadow: 4px 4px #ffffff;
+}
+
 @import "tailwindcss";
