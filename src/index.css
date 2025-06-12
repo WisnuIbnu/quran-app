@@ -4,24 +4,6 @@
   font-family: 'Amiri', serif;
 }
 
-/* Dark mode transition */
-html {
-  @apply transition-colors duration-300;
-}
-
-/* Prose styles for dark mode */
-.prose {
-  @apply max-w-none;
-}
-
-.prose p {
-  @apply my-4;
-}
-
-.dark .prose-invert {
-  @apply text-gray-300;
-}
-
 :root {
   /* Light Mode Default */
   --bg-color: #ffffff;

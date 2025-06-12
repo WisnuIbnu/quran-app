@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+import { useTheme } from '../hooks/useTheme';
 import AudioPlayer from '../components/AudioPlayer';
 import Header from '../components/Header';
 import SurahLeftSide from '../components/SurahLeftSide';
@@ -9,6 +10,7 @@ import { ChevronLeftIcon } from '@heroicons/react/24/solid';
 
 const SurahDetail = () => {
   const { id } = useParams();
+  const { theme } = useTheme();
   const [currentAudio, setCurrentAudio] = useState(null);
   const [audioKey, setAudioKey] = useState('01');
   const [isPlayingFullSurah, setIsPlayingFullSurah] = useState(false);
@@ -73,11 +75,15 @@ const SurahDetail = () => {
 
   if (surahLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-color)' }}>
         <Header />
         <div className="max-w-md mx-auto px-4 py-8">
           <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+            <div className={`animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 ${
+              theme === 'dark' 
+                ? 'border-blue-400' 
+                : 'border-blue-500'
+            }`}></div>
           </div>
         </div>
       </div>
@@ -86,14 +92,21 @@ const SurahDetail = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-color)' }}>
         <Header />
         <div className="max-w-md mx-auto px-4 py-8 text-center">
-          <div className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 p-4 rounded-lg">
+          <div className="p-4 rounded-lg" style={{ 
+            backgroundColor: 'var(--card-bg)',
+            color: 'var(--text-color)'
+          }}>
             <p>Error loading surah: {error.message || 'Network Error'}</p>
             <button 
               onClick={() => window.location.reload()} 
-              className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+              className={`mt-2 px-4 py-2 rounded-lg transition-colors ${
+                theme === 'dark' 
+                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                  : 'bg-blue-500 text-white hover:bg-blue-600'
+              }`}
             >
               Try Again
             </button>
@@ -109,7 +122,7 @@ const SurahDetail = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 pt-20">   
+      <div className="min-h-screen pt-20" style={{ backgroundColor: 'var(--bg-color)' }}>   
         <AudioPlayer 
           src={currentAudio?.src} 
           onEnded={handleAudioEnded} 
@@ -119,7 +132,15 @@ const SurahDetail = () => {
         <div className="container mx-auto px-4 py-6">
           {/* Back Button - Mobile Only */}
           <div className="mb-4 lg:hidden">
-            <Link to="/" className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
+            <Link 
+              to="/" 
+              className={`flex items-center transition-colors ${
+                theme === 'dark' 
+                  ? 'text-blue-400 hover:text-blue-300' 
+                  : 'text-blue-600 hover:text-blue-800'
+              }`}
+              style={{ color: 'var(--text-color)' }}
+            >
               <ChevronLeftIcon className="h-5 w-5 mr-1" />
               <span>Back to Surah List</span>
             </Link>
@@ -140,6 +161,7 @@ const SurahDetail = () => {
               toggleMute={toggleMute}
               isMuted={isMuted}
               currentAudio={currentAudio}
+              theme={theme}
             />
 
             {/* Right Side Component */}
@@ -149,6 +171,7 @@ const SurahDetail = () => {
               handlePlayAudio={handlePlayAudio}
               audioKey={audioKey}
               id={id}
+              theme={theme}
             />
           </div>
         </div>

@@ -25,33 +25,33 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Tentukan aset berdasarkan tema
+
   const logo = theme === 'dark' ? logoLight : logoDark
   const menuIcon = theme === 'dark' ? menuLight : menuDark
   const arrowIcon = theme === 'dark' ? iconLight : iconDark
-  const menuBgClass = theme === 'dark' ? ' text-white  hover:text-indigo-400' : 'text-black hover:text-indigo-600'
+  const menuBgClass = theme === 'dark' ? ' text-white ' : 'text-black'
   const navBgClass = theme === 'dark' ? 'bg-gray-900' : 'bg-white'
 
 
   return (
-    <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-d/20 backdrop-blur-lg shadow-sm" : ''} `}>
+    <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-5 flex items-center justify-between z-50 ${isScroll ? "bg-d/20 backdrop-blur-lg shadow-sm" : ''} `}>
 
       <Link to="/">
         <img src={logo} className='w-28 cursor-pointer mr-14' alt='Logo'/>
       </Link>
 
       {/* Menu desktop */}
-      <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 p-4 ${isScroll ? "" : 'menuBgClass shadow-xl  '}`}>
-        <li><a className={` ${menuBgClass} transition-colors`} href="/">Home</a></li>
-        <li><a className={` ${menuBgClass} transition-colors`} href="/">Al-Quran</a></li>
-        <li><a className={` ${menuBgClass} transition-colors`} href="/">Al-Ma'tsurat</a></li>
-        <li><a className={` ${menuBgClass} transition-colors`} href="/">Doa-doa</a></li>
+      <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 p-5 ${isScroll ? "" : 'menuBgClass shadow-xl  '}`}>
+        <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/">Home</a></li>
+        <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/">Al-Quran</a></li>
+        <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/">Al-Ma'tsurat</a></li>
+        <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/">Doa-doa</a></li>
       </ul>
 
       <div className='flex items-center gap-4'>
         <ThemeToggle />
-        <a href="#contact" className='hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4'>
-          Contact <img src={arrowIcon} className='w-3' alt='Contact' />
+        <a href="#contact" className={`hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+          Contact <img src={arrowIcon} className='w-3 py-3' alt='Contact' />
         </a>
         <button className='block md:hidden ml-3' onClick={openMenu} aria-label="Open menu">
           <img src={menuIcon} alt='Menu' className='w-6'/>
