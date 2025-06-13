@@ -72,9 +72,9 @@ const Header = () => {
         
         {/* Link menu mobile */}
         <li><a className={` ${menuBgClass} transition-colors font-medium`} onClick={closeMenu} href="/">Home</a></li>
-        <li><a className={` ${menuBgClass} transition-colors font-medium`} onClick={closeMenu} href="/">Al-Quran</a></li>
-        <li><a className={` ${menuBgClass} transition-colors font-medium`} onClick={closeMenu} href="/a">Al-Ma'tsurat</a></li>
-        <li><a className={` ${menuBgClass} transition-colors font-medium`} onClick={closeMenu} href="/a">Doa-doa</a></li>
+        <li><a className={` ${menuBgClass} transition-colors font-medium`} onClick={closeMenu} href="/quran">Al-Quran</a></li>
+        <li><a className={` ${menuBgClass} transition-colors font-medium`} onClick={closeMenu} href="/">Al-Ma'tsurat</a></li>
+        <li><a className={` ${menuBgClass} transition-colors font-medium`} onClick={closeMenu} href="/">Doa-doa</a></li>
       </ul>
     </nav>
   );
