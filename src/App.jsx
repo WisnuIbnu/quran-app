@@ -10,10 +10,10 @@ function App() {
     <ThemeProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/quran" element={<Home />} />
           <Route path="/surah/:id" element={<SurahDetail />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/a" element={<UnderDevelopment />} />
+          <Route path="/" element={<UnderDevelopment />} />
         </Routes>
       </Router>
     </ThemeProvider>
