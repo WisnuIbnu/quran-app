@@ -12,11 +12,6 @@ const SurahLeftSide = ({
   handlePauseFullSurah, 
   audioKey, 
   setAudioKey, 
-  volume, 
-  handleVolumeChange, 
-  toggleMute, 
-  isMuted, 
-  currentAudio 
 }) => {
   const getQariName = (key) => {
     const qariNames = {
@@ -60,26 +55,6 @@ const SurahLeftSide = ({
               {surah.deskripsi ? surah.deskripsi.replace(/<[^>]+>/g, '').substring(0, 200) + '...' : 'Loading description...'}
             </p>
           </div>
-
-          <div className="flex justify-between items-center">
-            <div>
-              <p className={`${theme === 'dark' ? 'text-white' : 'text-gray-500'} font-medium`}>{surah.arti || 'Loading translation...'}</p>
-              <p className={`${theme === 'dark' ? 'text-white' : 'text-gray-500'} text-sm`}>{surah.tempatTurun || '...'}</p>
-            </div>
-            {audioFull && Object.keys(audioFull).length > 0 && (
-              <button
-                onClick={isPlayingFullSurah ? handlePauseFullSurah : handlePlayFullSurah}
-                className="p-3 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors shadow-lg"
-                disabled={!audioFull[audioKey]}
-              >
-                {isPlayingFullSurah ? (
-                  <PauseIcon className="h-6 w-6" />
-                ) : (
-                  <PlayIcon className="h-6 w-6" />
-                )}
-              </button>
-            )}
-          </div>
         </div>
 
         <div className={`rounded-2xl shadow-2xl p-6 border ${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-gray-100 border-blue-100'}`}>
@@ -118,30 +93,25 @@ const SurahLeftSide = ({
 
 
           <div className="mt-4">
-            <h2 className={`text-lg font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>Volume</h2>
-            <div className="flex items-center gap-2">
-              <button 
-                onClick={toggleMute}
-                className={`p-2 rounded-full transition-colors border ${theme === 'dark' ? ' bg-gray-700  text-white hover:bg-gray-600 border-gray-700' : 'bg-gray-200 text-gray-500 hover:bg-gray-00 border-blue-100'}`}
-                disabled={!currentAudio}
+            <div className="flex justify-between items-center">
+            <div>
+              <p className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-medium font-arabic `}>{surah.nama || 'Loading translation...'}</p>
+              <p className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} text-sm`}>{surah.tempatTurun || '...'}</p>
+            </div>
+            {audioFull && Object.keys(audioFull).length > 0 && (
+              <button
+                onClick={isPlayingFullSurah ? handlePauseFullSurah : handlePlayFullSurah}
+                className="p-3 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors shadow-lg"
+                disabled={!audioFull[audioKey]}
               >
-                {isMuted ? (
-                  <SpeakerXMarkIcon className="h-5 w-5" />
+                {isPlayingFullSurah ? (
+                  <PauseIcon className="h-6 w-6" />
                 ) : (
-                  <SpeakerWaveIcon className="h-5 w-5" />
+                  <PlayIcon className="h-6 w-6" />
                 )}
               </button>
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                value={volume}
-                onChange={handleVolumeChange}
-                className={`w-full h-2 rounded-lg appearance-none cursor-pointer ${theme === 'dark' ? 'bg-gray-600' : 'bg-gray-300'}`}
-                disabled={!currentAudio}
-              />
-            </div>
+            )}
+          </div>
           </div>
         </div>
       </div>

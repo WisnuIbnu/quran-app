@@ -148,7 +148,7 @@ const SurahDetail = () => {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-6">
-            {/* Left Side Component */}
+
             <SurahLeftSide 
               surah={surah}
               audioFull={audioFull}
@@ -165,7 +165,7 @@ const SurahDetail = () => {
               theme={theme}
             />
 
-            {/* Right Side Component */}
+
             <SurahRightSide 
               surah={surah}
               activeVerse={activeVerse}
