@@ -104,7 +104,7 @@ const UnderDevelopment = () => {
             className="px-2 sm:px-0"
           >
             <Link
-              to="/quran"
+              to="/"
               className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full shadow-sm text-gray-900 bg-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors"
             >
               Go to Quran Page
