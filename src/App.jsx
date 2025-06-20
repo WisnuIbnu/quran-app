@@ -1,19 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext'; // sesuaikan path
-import Home from './pages/Home';
+import Quran from './pages/Quran';
 import SurahDetail from './pages/SurahDetail';
 import NotFound from './pages/NotFound';
 import UnderDevelopment from './pages/UnderDevelopment';
+import Home from './pages/Home';
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
         <Routes>
-          <Route path="/quran" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/quran" element={<Quran />} />
           <Route path="/surah/:id" element={<SurahDetail />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/" element={<UnderDevelopment />} />
+          <Route path="/under-development" element={<UnderDevelopment />} />
         </Routes>
       </Router>
     </ThemeProvider>

@@ -44,8 +44,8 @@ const Header = () => {
       <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 p-5 ${isScroll ? "" : 'menuBgClass shadow-xl  '}`}>
         <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/">Home</a></li>
         <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/quran">Al-Quran</a></li>
-        <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/">Al-Ma'tsurat</a></li>
-        <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/">Doa-doa</a></li>
+        <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/under-development">Al-Ma'tsurat</a></li>
+        <li><a className={` ${menuBgClass} transition-colors font-medium`} href="/under-development">Doa-doa</a></li>
       </ul>
 
       <div className='flex items-center gap-4'>
